@@ -1,11 +1,13 @@
 package edu.es.eoi.service;
 
+import edu.es.eoi.entity.Recipe;
+
 public interface PublishService {
 
-	void publishRecipe();
+	Recipe publishRecipe();
 
-	void shareRecipe();
+	void shareRecipe(Recipe recipe);
 
-	void valorateRecipe();
+	void valorateRecipe(Recipe recipe, Double valoration);
 
 }
