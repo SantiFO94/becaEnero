@@ -1,19 +1,19 @@
 package edu.es.eoi.controller;
 
-import java.util.List;
-
-import edu.es.eoi.entity.Recipe;
 import edu.es.eoi.service.RecipeService;
 import edu.es.eoi.service.RecipeServiceImpl;
+import edu.es.eoi.ui.MainMenu;
+import edu.es.eoi.ui.RecipesListView;
 
 public class RecipeController {
 
-	public List<Recipe> readAll(){
-		//comprobaciones: usuario logueado, token de sesión activo
-		//llamada al servicio
+	public void readAll(){		
 		
-		RecipeService service = new RecipeServiceImpl();
+		RecipeService service= new RecipeServiceImpl();		
+
+		RecipesListView.printAllRecipes(service.readAll());
 		
-		return service.readAll();
+		MainMenu.printMenuMain();
+		
 	}
 }
